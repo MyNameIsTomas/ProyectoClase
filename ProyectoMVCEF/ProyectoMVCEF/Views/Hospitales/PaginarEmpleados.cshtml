@@ -1,0 +1,32 @@
+﻿@using ProyectoMVCEF.Models
+@model List<PLANTILLA>
+@{
+    ViewBag.Title = "PaginarEmpleados";
+}
+<h2>PaginarEmpleados</h2>
+
+<form method="post">
+    <div>
+        <label>Hospitales: </label>
+        <select name="hospital" class="form-control" size="4" multiple>
+            @foreach (HOSPITAL hosp in ViewBag.Hospitales) {
+                <option value="@hosp.HOSPITAL_COD">@hosp.NOMBRE</option> 
+            }
+        </select>
+        <button type="submit" class="btn btn-success">Mostrar empleados</button>
+    </div>
+</form>
+@if (Model != null) {
+    <table class="table table-hover">
+        <tr>
+            <th>@Html.ActionLink("Apellido", "PaginarEmpleados", "Hospitales", new { orden = ViewBag.Orden }, null)</th>
+            <th>SALARIO</th>
+        </tr>
+        @foreach (PLANTILLA plan in Model) {
+            <tr>
+                <td>@plan.APELLIDO</td>
+                <td>@plan.SALARIO</td>
+            </tr>
+        }
+    </table>
+}

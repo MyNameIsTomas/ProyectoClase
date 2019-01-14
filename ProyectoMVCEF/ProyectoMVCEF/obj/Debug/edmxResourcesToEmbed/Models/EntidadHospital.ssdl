@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HOSPITALModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DEPT">
+    <Key>
+      <PropertyRef Name="DEPT_NO" />
+    </Key>
+    <Property Name="DEPT_NO" Type="int" Nullable="false" />
+    <Property Name="DNOMBRE" Type="nvarchar" MaxLength="50" />
+    <Property Name="LOC" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DOCTOR">
+    <Key>
+      <PropertyRef Name="DOCTOR_NO" />
+    </Key>
+    <Property Name="HOSPITAL_COD" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOCTOR_NO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="APELLIDO" Type="nvarchar" MaxLength="50" />
+    <Property Name="ESPECIALIDAD" Type="nvarchar" MaxLength="50" />
+    <Property Name="SALARIO" Type="int" />
+  </EntityType>
+  <EntityType Name="EMP">
+    <Key>
+      <PropertyRef Name="EMP_NO" />
+    </Key>
+    <Property Name="EMP_NO" Type="int" Nullable="false" />
+    <Property Name="APELLIDO" Type="nvarchar" MaxLength="50" />
+    <Property Name="OFICIO" Type="nvarchar" MaxLength="50" />
+    <Property Name="DIR" Type="int" />
+    <Property Name="FECHA_ALT" Type="datetime" />
+    <Property Name="SALARIO" Type="int" />
+    <Property Name="COMISION" Type="int" />
+    <Property Name="DEPT_NO" Type="int" />
+  </EntityType>
+  <EntityType Name="ENFERMO">
+    <Key>
+      <PropertyRef Name="INSCRIPCION" />
+    </Key>
+    <Property Name="INSCRIPCION" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="APELLIDO" Type="nvarchar" MaxLength="50" />
+    <Property Name="DIRECCION" Type="nvarchar" MaxLength="50" />
+    <Property Name="FECHA_NAC" Type="datetime" />
+    <Property Name="S" Type="nvarchar" MaxLength="50" />
+    <Property Name="NSS" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HOSPITAL.dbo.HOSPITAL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="HOSPITAL">
+    <Key>
+      <PropertyRef Name="HOSPITAL_COD" />
+    </Key>
+    <Property Name="HOSPITAL_COD" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NOMBRE" Type="nvarchar" MaxLength="50" />
+    <Property Name="DIRECCION" Type="nvarchar" MaxLength="50" />
+    <Property Name="TELEFONO" Type="nvarchar" MaxLength="50" />
+    <Property Name="NUM_CAMA" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PLANTILLA">
+    <Key>
+      <PropertyRef Name="EMPLEADO_NO" />
+    </Key>
+    <Property Name="HOSPITAL_COD" Type="nvarchar" MaxLength="50" />
+    <Property Name="SALA_COD" Type="nvarchar" MaxLength="50" />
+    <Property Name="EMPLEADO_NO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="APELLIDO" Type="nvarchar" MaxLength="50" />
+    <Property Name="FUNCION" Type="nvarchar" MaxLength="50" />
+    <Property Name="T" Type="nvarchar" MaxLength="50" />
+    <Property Name="SALARIO" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HOSPITAL.dbo.informacionTrabajadores' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="informacionTrabajadores">
+    <Key>
+      <PropertyRef Name="IDEMPLEADO" />
+    </Key>
+    <Property Name="IDEMPLEADO" Type="int" Nullable="false" />
+    <Property Name="APELLIDO" Type="nvarchar" MaxLength="50" />
+    <Property Name="CARGO" Type="nvarchar" MaxLength="50" />
+    <Property Name="SALARIO" Type="int" />
+  </EntityType>
+  <Function Name="datosdepartamento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="deptno" Type="int" Mode="In" />
+    <Parameter Name="personas" Type="int" Mode="InOut" />
+    <Parameter Name="suma" Type="int" Mode="InOut" />
+    <Parameter Name="media" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="eliminarenfermo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="inscripcion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="informaciondoctor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="posicion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="informacionempleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="posicion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="mostrarenfermos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="paginarEmpleadosGrupo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="posicion" Type="int" Mode="In" />
+    <Parameter Name="totalregistro" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="paginarTrabajadores" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="posicion" Type="int" Mode="In" />
+    <Parameter Name="salario" Type="int" Mode="In" />
+    <Parameter Name="totalregistro" Type="int" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="HOSPITALModelStoreContainer">
+    <EntitySet Name="DEPT" EntityType="Self.DEPT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DOCTOR" EntityType="Self.DOCTOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EMP" EntityType="Self.EMP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ENFERMO" EntityType="Self.ENFERMO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PLANTILLA" EntityType="Self.PLANTILLA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HOSPITAL" EntityType="Self.HOSPITAL" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [HOSPITAL].[HOSPITAL_COD] AS [HOSPITAL_COD], 
+    [HOSPITAL].[NOMBRE] AS [NOMBRE], 
+    [HOSPITAL].[DIRECCION] AS [DIRECCION], 
+    [HOSPITAL].[TELEFONO] AS [TELEFONO], 
+    [HOSPITAL].[NUM_CAMA] AS [NUM_CAMA]
+    FROM [dbo].[HOSPITAL] AS [HOSPITAL]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="informacionTrabajadores" EntityType="Self.informacionTrabajadores" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [informacionTrabajadores].[IDEMPLEADO] AS [IDEMPLEADO], 
+    [informacionTrabajadores].[APELLIDO] AS [APELLIDO], 
+    [informacionTrabajadores].[CARGO] AS [CARGO], 
+    [informacionTrabajadores].[SALARIO] AS [SALARIO]
+    FROM [dbo].[informacionTrabajadores] AS [informacionTrabajadores]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

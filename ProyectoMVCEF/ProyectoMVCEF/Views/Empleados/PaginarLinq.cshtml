@@ -1,0 +1,33 @@
+﻿@using ProyectoMVCEF.Models
+@model List<informacionTrabajadores>
+@{
+    ViewBag.Title = "PaginarLinq";
+    int pagina = 1;
+}
+
+<h2>PaginarLinq</h2>
+<table class="table">
+    <tr>
+        <th>Apellido</th>
+        <th>Salario</th>
+        <th>Cargo</th>
+    </tr>
+
+    @foreach (informacionTrabajadores emp in Model)
+    {
+        <tr>
+            <td>@emp.APELLIDO</td>
+            <td>@emp.SALARIO</td>
+            <td>@emp.CARGO</td>
+        </tr>
+    }
+</table>
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        @for (int i = 1; i <= ViewBag.TotalRegistros; i += 3) {
+            <li class='page - item'>
+            @Html.ActionLink(pagina++.ToString(), "PaginarLinq", "Empleados", new { posicion = i }, null)
+            </li>
+        }
+    </ul>
+</nav>

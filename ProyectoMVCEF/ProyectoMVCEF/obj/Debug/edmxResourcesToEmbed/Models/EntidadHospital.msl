@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HOSPITALModelStoreContainer" CdmEntityContainer="EntidadHospital">
+    <EntitySetMapping Name="EMP">
+      <EntityTypeMapping TypeName="HOSPITALModel.EMP">
+        <MappingFragment StoreEntitySet="EMP">
+          <ScalarProperty Name="EMP_NO" ColumnName="EMP_NO" />
+          <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />
+          <ScalarProperty Name="OFICIO" ColumnName="OFICIO" />
+          <ScalarProperty Name="DIR" ColumnName="DIR" />
+          <ScalarProperty Name="FECHA_ALT" ColumnName="FECHA_ALT" />
+          <ScalarProperty Name="SALARIO" ColumnName="SALARIO" />
+          <ScalarProperty Name="COMISION" ColumnName="COMISION" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DEPT">
+      <EntityTypeMapping TypeName="HOSPITALModel.DEPT">
+        <MappingFragment StoreEntitySet="DEPT">
+          <ScalarProperty Name="LOC" ColumnName="LOC" />
+          <ScalarProperty Name="DNOMBRE" ColumnName="DNOMBRE" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="eliminarenfermo" FunctionName="HOSPITALModel.Store.eliminarenfermo" />
+    <EntitySetMapping Name="ENFERMO">
+      <EntityTypeMapping TypeName="HOSPITALModel.ENFERMO">
+        <MappingFragment StoreEntitySet="ENFERMO">
+          <ScalarProperty Name="NSS" ColumnName="NSS" />
+          <ScalarProperty Name="S" ColumnName="S" />
+          <ScalarProperty Name="FECHA_NAC" ColumnName="FECHA_NAC" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />
+          <ScalarProperty Name="INSCRIPCION" ColumnName="INSCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="mostrarenfermos" FunctionName="HOSPITALModel.Store.mostrarenfermos" />
+    <FunctionImportMapping FunctionImportName="informacionempleado" FunctionName="HOSPITALModel.Store.informacionempleado">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HOSPITALModel.informacionempleado_Result">
+          <ScalarProperty Name="posicion" ColumnName="posicion" />
+          <ScalarProperty Name="EMP_NO" ColumnName="EMP_NO" />
+          <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />
+          <ScalarProperty Name="OFICIO" ColumnName="OFICIO" />
+          <ScalarProperty Name="DIR" ColumnName="DIR" />
+          <ScalarProperty Name="FECHA_ALT" ColumnName="FECHA_ALT" />
+          <ScalarProperty Name="SALARIO" ColumnName="SALARIO" />
+          <ScalarProperty Name="COMISION" ColumnName="COMISION" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="DNOMBRE" ColumnName="DNOMBRE" />
+          <ScalarProperty Name="LOC" ColumnName="LOC" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="informaciondoctor" FunctionName="HOSPITALModel.Store.informaciondoctor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HOSPITALModel.informaciondoctor_Result">
+          <ScalarProperty Name="posicion" ColumnName="posicion" />
+          <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />
+          <ScalarProperty Name="SALARIO" ColumnName="SALARIO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ESPECIALIDAD" ColumnName="ESPECIALIDAD" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="DOCTOR">
+      <EntityTypeMapping TypeName="HOSPITALModel.DOCTOR">
+        <MappingFragment StoreEntitySet="DOCTOR">
+          <ScalarProperty Name="SALARIO" ColumnName="SALARIO" />
+          <ScalarProperty Name="ESPECIALIDAD" ColumnName="ESPECIALIDAD" />
+          <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />
+          <ScalarProperty Name="DOCTOR_NO" ColumnName="DOCTOR_NO" />
+          <ScalarProperty Name="HOSPITAL_COD" ColumnName="HOSPITAL_COD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="datosdepartamento" FunctionName="HOSPITALModel.Store.datosdepartamento" />
+    <FunctionImportMapping FunctionImportName="paginarEmpleadosGrupo" FunctionName="HOSPITALModel.Store.paginarEmpleadosGrupo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HOSPITALModel.paginarEmpleadosGrupo_Result">
+          <ScalarProperty Name="posicion" ColumnName="posicion" />
+          <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />
+          <ScalarProperty Name="SALARIO" ColumnName="SALARIO" />
+          <ScalarProperty Name="OFICIO" ColumnName="OFICIO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="paginarTrabajadores" FunctionName="HOSPITALModel.Store.paginarTrabajadores">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HOSPITALModel.paginarTrabajadores_Result">
+          <ScalarProperty Name="POSICION" ColumnName="POSICION" />
+          <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />
+          <ScalarProperty Name="SALARIO" ColumnName="SALARIO" />
+          <ScalarProperty Name="CARGO" ColumnName="CARGO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="informacionTrabajadores">
+      <EntityTypeMapping TypeName="HOSPITALModel.informacionTrabajadores">
+        <MappingFragment StoreEntitySet="informacionTrabajadores">
+          <ScalarProperty Name="SALARIO" ColumnName="SALARIO" />
+          <ScalarProperty Name="CARGO" ColumnName="CARGO" />
+          <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />
+          <ScalarProperty Name="IDEMPLEADO" ColumnName="IDEMPLEADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PLANTILLA">
+      <EntityTypeMapping TypeName="HOSPITALModel.PLANTILLA">
+        <MappingFragment StoreEntitySet="PLANTILLA">
+          <ScalarProperty Name="SALARIO" ColumnName="SALARIO" />
+          <ScalarProperty Name="T" ColumnName="T" />
+          <ScalarProperty Name="FUNCION" ColumnName="FUNCION" />
+          <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />
+          <ScalarProperty Name="EMPLEADO_NO" ColumnName="EMPLEADO_NO" />
+          <ScalarProperty Name="SALA_COD" ColumnName="SALA_COD" />
+          <ScalarProperty Name="HOSPITAL_COD" ColumnName="HOSPITAL_COD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HOSPITAL">
+      <EntityTypeMapping TypeName="HOSPITALModel.HOSPITAL">
+        <MappingFragment StoreEntitySet="HOSPITAL">
+          <ScalarProperty Name="NUM_CAMA" ColumnName="NUM_CAMA" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="HOSPITAL_COD" ColumnName="HOSPITAL_COD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,33 @@
+﻿@using ProyectoMVCEF.Models
+@model informacionempleado_Result
+
+@{
+    ViewBag.Title = "PaginarEmpleadosSimple";
+}
+
+<h2>PaginarEmpleadosSimple</h2>
+<h3 style="color:blueviolet">@ViewBag.Mensaje</h3>
+<table class="table table-hover">
+    <tr>
+        <th>Apellido</th>
+        <th>Oficio</th>
+        <th>Salario</th>
+        <th>Departamento</th>
+        <th>Localidad</th>
+    </tr>
+    <tr>
+        <td>@Model.APELLIDO</td>
+        <td>@Model.OFICIO</td>
+        <td>@Model.SALARIO</td>
+        <td>@Model.DNOMBRE</td>
+        <td>@Model.LOC</td>
+    </tr>
+    <tr>
+        <td colspan="5">
+            @Html.ActionLink("Primero", "PaginarEmpleadosSimple", "Empleados", new { posicion = 1 }, null)  |
+            @Html.ActionLink("Anterior", "PaginarEmpleadosSimple", "Empleados", new { posicion = ViewBag.Anterior }, null)  |
+            @Html.ActionLink("Siguiente", "PaginarEmpleadosSimple", "Empleados", new { posicion = ViewBag.Siguiente }, null)  |
+            @Html.ActionLink("Ultimo", "PaginarEmpleadosSimple", "Empleados", new { posicion = ViewBag.Ultimo }, null)  |
+        </td>
+    </tr>
+</table>

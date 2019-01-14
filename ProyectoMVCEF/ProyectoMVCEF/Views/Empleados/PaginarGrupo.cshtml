@@ -1,0 +1,29 @@
+﻿@using ProyectoMVCEF.Models
+@model List<paginarEmpleadosGrupo_Result>
+@{
+    ViewBag.Title = "PaginarGrupo";
+    int pagina = 1;
+}
+<h2>PaginarGrupo</h2>
+<a href="Pagina1.html?parametro1=valor&parametro2=valor">Pulsar</a>
+<table class="table">
+    <tr>
+        <th>Apellido</th>
+        <th>Salario</th>
+        <th>Oficio</th>
+    </tr>
+
+    @foreach (paginarEmpleadosGrupo_Result emp in Model)
+    {
+        <tr>
+            <td>@emp.APELLIDO</td>
+            <td>@emp.SALARIO</td>
+            <td>@emp.OFICIO</td>
+        </tr>
+    }
+</table>
+
+@for (int i = 1; i <= ViewBag.TotalRegistros; i += 3) {
+    @Html.ActionLink(pagina++.ToString(), "PaginarGrupo", "Empleados", new { posicion = i }, null)   
+}
+<!--Html.Raw(ViewBag.Paginacion)-->
