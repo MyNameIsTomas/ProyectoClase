@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "InsertarDepartamento";
+}
+
+<h2>InsertarDepartamento</h2>
+
+<form method="post">
+    <input type="text" name="numero"    class="form-control" required placeholder="Numero"/><br />
+    <input type="text" name="nombre"    class="form-control" required placeholder="Nombre"/><br />
+    <input type="text" name="localidad" class="form-control" required placeholder="Localidad"/>
+    <button type="submit" class="btn btn-success">Enviar</button>
+</form>
+<h1 style="color:blue">@ViewBag.Mensaje</h1>
+@Html.ActionLink("Departamento", "Index", "DeptLinq")

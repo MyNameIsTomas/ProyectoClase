@@ -1,0 +1,38 @@
+﻿@model List<ProyectoLinq.Models.EMP>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<h1 style="color:cornflowerblue">Oficios</h1>
+<div class="row">
+    <div class="col-md-3">
+        <form method="post">
+            @foreach (String ofi in ViewBag.Lis) {
+                <input type="radio" value="@ofi" id="@ofi" name="oficio" />
+                <label for="@ofi">@ofi</label>
+                <br />
+            }
+            <label>Incremento: </label><input type="number" name="incremento" />
+            <button type="submit" class="btn btn-info">Incrementar</button>
+        </form>
+    </div>
+    <div class="col-md-8">
+        <br />
+        <table class="table table-bordered">
+            <tr>
+                <th>Apellido</th>
+                <th>Oficio</th>
+                <th>Salario</th>
+            </tr>
+            @foreach (var item in Model) {
+                <tr>
+                    <td>@item.APELLIDO</td>
+                    <td>@item.OFICIO</td>
+                    <td>@item.SALARIO</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

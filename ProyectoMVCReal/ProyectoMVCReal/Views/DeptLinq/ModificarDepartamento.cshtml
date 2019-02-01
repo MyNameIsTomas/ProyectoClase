@@ -1,0 +1,19 @@
+﻿@model List<String>
+@{
+    ViewBag.Title = "ModificarDepartamento";
+}
+
+<h2>ModificarDepartamento</h2>
+<form method="post">
+    <label>Nueva localidad</label>
+    <input type="text" name="newloc" placeholder="Nueva localidad" class="form-control" /><br />
+    <label>Antigua localidad</label>
+    <select name="oldloc" class="form-control">
+        @foreach (String loc in Model) {
+            <option value="@loc">@loc</option>
+        }
+    </select><br />
+    <button type="submit" class="btn btn-info">Modificar</button>
+</form>
+<h1 style="color:blue">@ViewBag.Mensaje</h1>
+@Html.ActionLink("Lista de departamentos", "Index", "DeptLinq")

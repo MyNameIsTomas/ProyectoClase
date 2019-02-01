@@ -1,0 +1,13 @@
+C:\Users\AlumnoMCSD\source\repos\PRACTICAADO\PRACTICAADO\obj\Debug\PRACTICAADO.csprojAssemblyReference.cache
+C:\Users\AlumnoMCSD\source\repos\PRACTICAADO\PRACTICAADO\obj\Debug\ProyectoADO.FormPractica.resources
+C:\Users\AlumnoMCSD\source\repos\PRACTICAADO\PRACTICAADO\obj\Debug\PRACTICAADO.Properties.Resources.resources
+C:\Users\AlumnoMCSD\source\repos\PRACTICAADO\PRACTICAADO\obj\Debug\PRACTICAADO.csproj.GenerateResource.cache
+C:\Users\AlumnoMCSD\source\repos\PRACTICAADO\PRACTICAADO\obj\Debug\PRACTICAADO.csproj.CoreCompileInputs.cache
+C:\Users\AlumnoMCSD\source\repos\PRACTICAADO\PRACTICAADO\bin\Debug\PRACTICAADO.exe.config
+C:\Users\AlumnoMCSD\source\repos\PRACTICAADO\PRACTICAADO\bin\Debug\PRACTICAADO.exe
+C:\Users\AlumnoMCSD\source\repos\PRACTICAADO\PRACTICAADO\bin\Debug\PRACTICAADO.pdb
+C:\Users\AlumnoMCSD\source\repos\PRACTICAADO\PRACTICAADO\bin\Debug\ClasesSQL.dll
+C:\Users\AlumnoMCSD\source\repos\PRACTICAADO\PRACTICAADO\bin\Debug\ClasesSQL.pdb
+C:\Users\AlumnoMCSD\source\repos\PRACTICAADO\PRACTICAADO\obj\Debug\PRACTICAADO.csproj.CopyComplete
+C:\Users\AlumnoMCSD\source\repos\PRACTICAADO\PRACTICAADO\obj\Debug\PRACTICAADO.exe
+C:\Users\AlumnoMCSD\source\repos\PRACTICAADO\PRACTICAADO\obj\Debug\PRACTICAADO.pdb

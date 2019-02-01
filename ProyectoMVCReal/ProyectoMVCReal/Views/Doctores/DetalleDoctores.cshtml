@@ -1,0 +1,14 @@
+﻿@using ProyectoMVCReal.Models
+@model Doctores
+@{
+    ViewBag.Title = "DetalleDoctores";
+}
+
+<h2>DetalleDoctores</h2>
+<dl>
+    @if (Model != null) {
+        <dt>Apellido: @Model.Apellido</dt>
+        <dt>Especialidad: @Model.Especialidad</dt>
+        <dt>Salario: @Model.Salario</dt>
+    }
+</dl>

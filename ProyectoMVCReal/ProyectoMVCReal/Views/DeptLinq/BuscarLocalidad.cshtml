@@ -1,0 +1,23 @@
+﻿@using ProyectoMVCReal.Models
+@model DEPT
+@{
+    ViewBag.Title = "BuscarLocalidad";
+}
+
+<h2>BuscarLocalidad</h2>
+
+<form method="post">
+    <select name="localidad">
+        @foreach (DEPT d in ViewBag.Lis) {
+            <option>@d.LOC</option>
+        }
+    </select>
+    <button >Enviar</button>
+</form>
+<dl>
+    @if (Model != null) {
+        <dt>Numero: @Model.DEPT_NO</dt>
+        <dt>Especialidad: @Model.DNOMBRE</dt>
+        <dt>Localidad: @Model.LOC</dt>
+    }
+</dl>

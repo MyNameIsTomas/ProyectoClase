@@ -1,0 +1,42 @@
+﻿@model List<ProyectoLinq.Models.EMP>
+
+@{
+    ViewBag.Title = "EmpleadoDepartamento";
+}
+
+<h2>EmpleadoDepartamento</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <h1 style="color:cornflowerblue">Departamento</h1>
+            <select name="departamento">
+                @foreach (String dept in ViewBag.Lista)
+                {
+                    <option value="@dept">@dept</option>
+                }
+            </select>
+            <button type="submit" class="btn btn-success">Mostrar</button>
+        </form>
+    </div>
+    <div class="col-md-8">
+        @if (Model != null) {
+        <table class="table table-bordered">
+            <tr>
+                <th>Apellido</th>
+                <th>Oficio</th>
+                <th>Salario</th>
+                <th>Acción</th>
+            </tr>
+            @foreach (var item in Model) {
+                <tr>
+                    <td>@item.APELLIDO</td>
+                    <td>@item.OFICIO</td>
+                    <td>@item.SALARIO</td>
+                    <td>Eliminar</td>
+                </tr>
+            }
+        </table>
+        }
+    </div>
+</div>

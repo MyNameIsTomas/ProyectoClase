@@ -1,0 +1,28 @@
+﻿@using ProyectoMVCReal.Models
+@model List<Doctores>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@if (Model != null)
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>Apellido: </th>
+            <th>Salario: </th>
+            <th>Especialidad: </th>
+            <th>Detalles </th>
+            <th>Eliminar </th>
+        </tr>
+        @foreach (Doctores d in Model) {
+        <tr>
+            <th>@d.Apellido </th>
+            <th>@d.Salario </th>
+            <th>@d.Especialidad </th>
+            <th>@Html.ActionLink("Detalles", "DetalleDoctores", "Doctores", new { numero = d.CodDoc }, null)</th>
+            <th><form method="post"><button class="btn btn-danger" type="submit" name="numero" value="@d.CodDoc">Eliminar</button></form></th>
+        </tr>
+        }
+    </table>
+}

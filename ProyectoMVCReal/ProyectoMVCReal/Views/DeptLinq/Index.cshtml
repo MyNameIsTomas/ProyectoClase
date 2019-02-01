@@ -1,0 +1,27 @@
+﻿@model List<ProyectoMVCReal.Models.DEPT>
+
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Index</h2>
+<p>    @Html.ActionLink("Nuevo departamento", "InsertarDepartamento", "DeptLinq")    </p>
+<table class="table">
+    <tr>
+        <th>Numero</th>
+        <th>Nombre</th>
+        <th>Localidad</th>
+        <th></th>
+    </tr>
+@foreach (var item in Model) {
+    <tr>
+        <td>@item.DEPT_NO</td>
+        <td>@item.DNOMBRE</td>
+        <td>@item.LOC</td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", "DeptLinq") |
+            @Html.ActionLink("Details", "Details", "DeptLinq") |
+            @Html.ActionLink("Eliminar Departamento", "EliminarDepartamento", "DeptLinq")
+        </td>
+    </tr>
+}
+</table>

@@ -1,0 +1,28 @@
+﻿@using ProyectoMVCReal.Models
+@model Departamento
+@{
+    ViewBag.Title = "BuscarDepartamento";
+}
+
+<h2>BuscarDepartamento Clave</h2>
+<form method="post">
+    <input type="number" name="numero" required placeholder="Numero de departamento" class="form-control"/>
+    <button type="submit" class="btn btn-success">Buscar departamento</button>
+</form>
+<h1 style="color:red">@ViewBag.Mensaje</h1>
+@if (Model != null) {
+<table class="table table-bordered">
+    <tr>
+        <th>Número: </th>
+        <th>@Model.Numero</th>
+    </tr>
+    <tr>
+        <th>Nombre: </th>
+        <th>@Model.Nombre</th>
+    </tr>
+    <tr>
+        <th>Localidad: </th>
+        <th>@Model.Localidad</th>
+    </tr>
+</table>
+}
