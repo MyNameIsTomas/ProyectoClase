@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<ul>
+    <li>
+        @Html.ActionLink("Ir a controlador vista", "ControladorVista", "Informacion")
+    </li>
+    <li>
+        @Html.ActionLink("Ir a visita controlador Get", "VistaControladorGet", "Informacion")
+    </li>
+    @*La información se puede enviar con actionlink
+        Existe un cuarto parametro donde podemos indicar los valores que recibira el metodo action
+        Los valores enviados deben tener el mismo nombre que los parametros de recepcción (Binding)
+        new { parametro1 = valor, parametro2 = valor}*@
+    <li>
+        @Html.ActionLink("Vista Controlador Get Parametros", "VistaControladorGet", "Informacion", new { nombre = "Perico", edad = 89}, null)
+    </li>
+</ul>

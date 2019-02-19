@@ -1,0 +1,16 @@
+﻿@model List<PracticasMVC.Models.Video>
+
+@{
+    ViewBag.Title = "ListaVideosYouTube";
+}
+
+<h2>ListaVideosYouTube</h2>
+<form action="" method="post">
+    Codigo: <select name="codigo">
+        @foreach (PracticasMVC.Models.Video obj in Model) {
+            <option value="@obj.Codigo">@obj.Texto</option>
+        }
+    </select>
+    <button type="submit" class="btn btn-success">Ver video</button>
+</form>
+@Html.Raw(ViewBag.HTML)

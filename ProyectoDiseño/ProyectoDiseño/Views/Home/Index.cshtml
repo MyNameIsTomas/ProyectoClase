@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("#boton").click(function () {
+                $("#mensaje").text("Boton presionado");
+            });
+        })
+    </script>
+}
+
+<h2 id="mensaje">Soy el Index</h2>
+<button type="button" class="btn btn-danger" id="boton">Mostrar mensaje</button>

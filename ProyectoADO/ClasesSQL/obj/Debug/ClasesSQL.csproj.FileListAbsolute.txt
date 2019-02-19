@@ -1,0 +1,6 @@
+C:\Users\AlumnoMCSD\source\repos\ProyectoADO\ClasesSQL\bin\Debug\ClasesSQL.dll
+C:\Users\AlumnoMCSD\source\repos\ProyectoADO\ClasesSQL\bin\Debug\ClasesSQL.pdb
+C:\Users\AlumnoMCSD\source\repos\ProyectoADO\ClasesSQL\obj\Debug\ClasesSQL.csprojAssemblyReference.cache
+C:\Users\AlumnoMCSD\source\repos\ProyectoADO\ClasesSQL\obj\Debug\ClasesSQL.csproj.CoreCompileInputs.cache
+C:\Users\AlumnoMCSD\source\repos\ProyectoADO\ClasesSQL\obj\Debug\ClasesSQL.dll
+C:\Users\AlumnoMCSD\source\repos\ProyectoADO\ClasesSQL\obj\Debug\ClasesSQL.pdb

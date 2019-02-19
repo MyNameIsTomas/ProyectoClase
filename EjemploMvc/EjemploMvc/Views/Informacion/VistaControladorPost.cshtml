@@ -1,0 +1,20 @@
+﻿@model EjemploMvc.Models.Coche
+@{
+    ViewBag.Title = "VistaControladorPost";
+}
+
+<h2>Enviar información de VistaControladorPost</h2>
+
+<form action="" method="post">
+    Marca: <input type="text" name="Marca" /><br />
+    Modelo: <input type="text" name="Modelo" /><br />
+    <button type="submit">Enviar datos</button>
+</form>
+<h1 style="color:blue">
+    @ViewBag.Descripcion
+</h1>
+@if(Model != null){
+<h2 style="color:blue">Marca: @Model.Marca</h2>
+<h2 style="color:rebeccapurple">Modelo: @Model.Modelo</h2>
+<h2 style="color:blueviolet">Velocidad: @Model.Velocidad</h2>
+}

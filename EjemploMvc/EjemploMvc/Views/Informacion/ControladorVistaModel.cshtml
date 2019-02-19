@@ -1,0 +1,16 @@
+﻿@*Normalmente la declaración se pone al inicio de la pagina*@
+@model EjemploMvc.Models.Persona
+@{
+    ViewBag.Title = "ControladorVistaModel";
+}
+
+<h2>ControladorVistaModel</h2>
+@if (Model != null)
+{
+<h1>
+    @Model.Nombre, @Model.Apellido, @Model.Edad
+</h1>
+} else {
+    <h1>No has enviado un Modelo</h1>
+}
+

@@ -1,0 +1,33 @@
+﻿@model List<PracticasMVC.Models.Numero>
+
+@{
+    ViewBag.Title = "TablaMultiplicarObjeto";
+}
+
+<h2>TablaMultiplicarObjeto</h2>
+<form action="" method="post">
+    Número: <input type="number" name="numero" required /><br />
+    <button type="submit">Multiplicar</button>
+</form>
+@if (Model != null)
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>Operación</th>
+            <th>Resultado</th>
+        </tr>
+        @{ foreach(PracticasMVC.Models.Numero obj in Model) {
+                <tr>
+                    <td>
+                        @obj.Operacion
+                    </td>
+                    <td>
+                        <h1 style="color:blue">
+                            @obj.Resultado
+                        </h1>
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+}

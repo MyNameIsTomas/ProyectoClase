@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "ControladorVista";
+}
+@{ 
+    //Sintaxis Razor para declarar objeto
+    EjemploMvc.Models.Persona persona;
+    persona = ViewBag.Persona;
+}
+<h2>Enviar información ControladorVista</h2>
+
+<h1>
+    @persona.Nombre, @persona.Apellido, @persona.Edad
+</h1>
+
+<h1>Mensaje: <span style="color:blue">@ViewData["MENSAJE"]</span></h1>
+<h2>@ViewBag.Informacion</h2>
+<h2 style="color:fuchsia">
+    @DateTime.Now.ToLongTimeString()
+</h2>
+@if (ViewBag.Fecha is null)
+{
+    <span>No hay fecha ViewBag</span>
+} else {
+    <h2>
+        @DateTime.Parse(ViewBag.Fecha).ToLongDateString()
+    </h2>
+}

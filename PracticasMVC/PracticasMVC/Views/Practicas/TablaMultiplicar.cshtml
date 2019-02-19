@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "TablaMultiplicar";
+}
+
+<h2>TablaMultiplicar</h2>
+<form action="" method="post">
+    Número: <input type="number" name="Numero" required /><br />
+    <button type="submit">Multiplicar</button>
+</form>
+@if (ViewBag.Valores != null) {
+    <table border="1px black solid">
+        @{ for (var i = 1; i <= 10; i++) {
+                <tr>
+                    <td>
+                        @(i)
+                    </td>
+                    <td>
+                        <h1 style="color:blue">
+                            @(ViewBag.Valores[i-1])
+                        </h1>
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+}
